@@ -4,8 +4,8 @@ const Card = () => {
   return (
     <section>
       <ImageAndStarComponent></ImageAndStarComponent>
-      <h2></h2>
-      <h3></h3>
+      <h2>Breed</h2>
+      <h3>Origin</h3>
     </section>
   );
 };
