@@ -1,15 +1,21 @@
 import { FiHome } from "react-icons/fi";
 import { FaRegStar } from "react-icons/fa";
-import { IoChatbubbleOutline } from "react-icons/io5";
+import { RiChat3Line } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <section className="flex">
-      <FiHome></FiHome>
-      <FaRegStar></FaRegStar>
-      <IoChatbubbleOutline></IoChatbubbleOutline>
-      <FiUser></FiUser>
+    <section className="flex justify-evenly">
+      <FiHome size={30} color="grey"></FiHome>
+      <FaRegStar
+        size={30}
+        color="grey"
+      ></FaRegStar>
+      <RiChat3Line
+        size={30}
+        color="grey"
+      ></RiChat3Line>
+      <FiUser size={30} color="grey"></FiUser>
     </section>
   );
 };
