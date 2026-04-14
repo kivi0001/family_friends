@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* import Image from "next/image";
 import { FaRegStar } from "react-icons/fa";
 
 const ImageAndStarComponent = () => {
@@ -23,4 +23,4 @@ const ImageAndStarComponent = () => {
   );
 };
 
-export default ImageAndStarComponent;
+export default ImageAndStarComponent; */

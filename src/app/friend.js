@@ -10,13 +10,7 @@ import BreedList from "@/components/Breedlist";
 export default function Home() {
   return (
     <main className="">
-      <section className="">
-        <SearchBar></SearchBar>
-      </section>
-
-      <BreedList></BreedList>
-
-      {/*       <section className="flex justify-center flex-col">
+      <section className="flex justify-center flex-col">
         <section className="self-center">
           <div className="relative w-85 h-90">
             <IoIosArrowBack
@@ -63,7 +57,7 @@ export default function Home() {
           <Description></Description>
           <History></History>
         </div>
-      </section> */}
+      </section>
     </main>
   );
 }
