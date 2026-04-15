@@ -1,11 +1,8 @@
-import SearchBar from "../components/SearchBar";
-import Card from "../components/Card";
 import Image from "next/image";
 import { FaRegStar } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
-import Description from "../components/Description";
-import History from "../components/History";
-import BreedList from "@/components/Breedlist";
+import Description from "@/components/Description";
+import History from "@/components/History";
 
 export default function Home() {
   return (

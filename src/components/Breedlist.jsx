@@ -10,25 +10,35 @@ const BreedList = () => {
 
 const FetchBreed = async () => {
   "use server";
-  const response = await fetch(
-    "https://api.thedogapi.com/v1/breeds",
-    {
-      headers: {
-        "x-api-key": process.env.API_KEY,
+  try {
+    const response = await fetch(
+      "https://api.thedogapi.com/v1/breeds",
+      {
+        headers: {
+          "x-api-key": process.env.API_KEY,
+        },
       },
-    },
-  );
+    );
 
-  const breeds = await response.json();
+    const breeds = await response.json();
 
-  return breeds.map((breed) => (
-    <Card
-      key={breed.id}
-      breedGroup={breed.breed_group}
-      origin={breed.origin}
-      imgsrc={breed.image.url}
-    ></Card>
-  ));
+    return breeds.map((breed) => (
+      <div key={breed.id}>
+        <Card
+          breedGroup={breed.breed_group}
+          origin={breed.origin}
+          imgsrc={breed.image.url}
+        ></Card>
+      </div>
+    ));
+  } catch (error) {
+    return (
+      <p>
+        Oooops... Der skete en fejl under
+        indlæsningen!
+      </p>
+    );
+  }
 };
 
 export default BreedList;

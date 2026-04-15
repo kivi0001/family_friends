@@ -1,11 +1,6 @@
-import SearchBar from "../components/SearchBar";
-import Card from "../components/Card";
-import Image from "next/image";
-import { FaRegStar } from "react-icons/fa";
-import { IoIosArrowBack } from "react-icons/io";
-import Description from "../components/Description";
-import History from "../components/History";
+import SearchBar from "@/components/SearchBar";
 import BreedList from "@/components/Breedlist";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -14,8 +9,11 @@ export default function Home() {
         <SearchBar></SearchBar>
       </section>
 
-      <BreedList></BreedList>
-
+      <Suspense
+        fallback={<div>Loading dogs...</div>}
+      >
+        <BreedList></BreedList>
+      </Suspense>
       {/*       <section className="flex justify-center flex-col">
         <section className="self-center">
           <div className="relative w-85 h-90">
