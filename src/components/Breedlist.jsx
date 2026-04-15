@@ -25,6 +25,7 @@ const FetchBreed = async () => {
     return breeds.map((breed) => (
       <div key={breed.id}>
         <Card
+          id={breed.id}
           breedGroup={breed.breed_group}
           origin={breed.origin}
           imgsrc={breed.image.url}

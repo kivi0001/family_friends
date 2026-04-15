@@ -3,18 +3,33 @@ import { FaRegStar } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import Description from "@/components/Description";
 import History from "@/components/History";
+import Link from "next/link";
 
-export default function Home() {
+const Detail = async ({ params }) => {
+  const { id } = await params;
+
+  const response = await fetch(
+    `https://api.thedogapi.com/v1/breeds/${id}`,
+    {
+      headers: {
+        "x-api-key": process.env.API_KEY,
+      },
+    },
+  );
+
+  const breed = await response.json();
+
   return (
     <main className="">
       <section className="flex justify-center flex-col">
         <section className="self-center">
           <div className="relative w-85 h-90">
-            <IoIosArrowBack
-              size={35}
-              className="m-4 absolute top-2 left-2 bg-white p-1 rounded-full z-10"
-            ></IoIosArrowBack>
-
+            <Link href="/">
+              <IoIosArrowBack
+                size={35}
+                className="m-4 absolute top-2 left-2 bg-white p-1 rounded-full z-10"
+              ></IoIosArrowBack>
+            </Link>
             <FaRegStar
               size={35}
               color="white"
@@ -23,19 +38,20 @@ export default function Home() {
 
             <div className="flex gap-4 rounded-2xl absolute bottom-10 left-4 px-3 py-2 bg-white/35">
               <Image
-                src={imgsrc}
+                src={breed.image.url}
+                alt="picture of dog"
                 width={40}
                 height={40}
                 className="aspect-square object-cover rounded-lg"
               ></Image>
               <h3 className="text-white">
-                Breed
+                {breed.name}
               </h3>
             </div>
 
             <Image
-              src="https://placecats.com/neo/300/200"
-              alt="Cat cutie"
+              src={breed.image.url}
+              alt="thumbnail picture of dog"
               width={340}
               height={360}
               className="object-cover rounded-2xl aspect-square"
@@ -44,17 +60,23 @@ export default function Home() {
         </section>
         <div className="self-center m-4 w-85">
           <h2 className="text-[28px] font-bold">
-            Breed
+            {breed.name}
           </h2>
           <div className="bg-[#ACD7FF] max-w-fit p-1 rounded-full">
             <h3 className="m-2 text-[#6B8B42] text-[13px]">
-              Karakteristik
+              {breed.temperament}
             </h3>
           </div>
-          <Description></Description>
-          <History></History>
+          <Description
+            description={breed.description}
+          ></Description>
+          <History
+            history={breed.history}
+          ></History>
         </div>
       </section>
     </main>
   );
-}
+};
+
+export default Detail;
