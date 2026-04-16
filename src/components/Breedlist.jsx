@@ -4,7 +4,11 @@ import Card from "./Card";
 const BreedList = ({ searchParams }) => {
   return (
     <Suspense
-      fallback={<div>Loading details...</div>}
+      fallback={
+        <div className="flex justify-center">
+          Loading details...
+        </div>
+      }
     >
       <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] justify-center">
         <FetchBreed
