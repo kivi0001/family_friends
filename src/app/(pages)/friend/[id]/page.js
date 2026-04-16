@@ -7,6 +7,7 @@ import Characteristics from "@/components/Characteristics";
 import FavoriteComp from "@/components/FavoriteComp";
 
 const Detail = async ({ params }) => {
+  "use cache";
   const { id } = await params;
 
   const response = await fetch(
