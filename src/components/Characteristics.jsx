@@ -11,6 +11,7 @@ const Characteristics = ({ tempStr }) => {
     "#F1E689",
     "#EDC4A8",
     "#EEC6FA",
+    "#FFDAF5",
   ];
 
   return (
@@ -26,13 +27,15 @@ const Characteristics = ({ tempStr }) => {
           }}
           className="my-1 p-2 rounded-full text-[#6B8B42] text-[13px]"
         >
-          {/* FÅ VIST ET ENKELT ARRAYOBJEKT AD GANGEN */}
-          {temper.toUpperCase()}
+          {/* FÅ VIST ET ENKELT ARRAYOBJEKT AD GANGEN, OG GØR FØRSTE BOGSTAV STORT, RESTEN SMÅT */}
+          {temper.substring(0, 1).toUpperCase() +
+            temper.substring(1).toLowerCase()}
         </h3>
       ))}
     </div>
   );
 };
+export default Characteristics;
 
 /* FØRSTE/TIDLIGE FORSØG: */
 
@@ -48,7 +51,6 @@ const Characteristics = ({ tempStr }) => {
   );
 }; */
 
-export default Characteristics;
 /* 
 { artsState.map( (art)=>{return (
 
