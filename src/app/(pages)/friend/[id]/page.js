@@ -5,6 +5,7 @@ import Description from "@/components/Description";
 import History from "@/components/History";
 import Link from "next/link";
 import Characteristics from "@/components/Characteristics";
+import FavoriteComp from "@/components/FavoriteComp";
 
 const Detail = async ({ params }) => {
   const { id } = await params;
@@ -27,15 +28,16 @@ const Detail = async ({ params }) => {
           <div className="relative w-85 h-90">
             <Link href="/">
               <IoIosArrowBack
-                size={35}
+                size={30}
                 className="m-4 absolute top-2 left-2 bg-white p-1 rounded-full z-10"
               ></IoIosArrowBack>
             </Link>
-            <FaRegStar
-              size={35}
-              color="white"
-              className="m-4 absolute top-2 right-2 bg-white/25 rounded-full p-1 z-10"
-            ></FaRegStar>
+            <div className="m-4 absolute top-2 right-2 bg-white/25 rounded-full p-1 z-10">
+              <FavoriteComp
+                id={breed.id}
+                breed={breed.name}
+              ></FavoriteComp>
+            </div>
 
             <div className="flex gap-4 rounded-2xl absolute bottom-10 left-4 px-3 py-2 bg-white/35">
               <Image

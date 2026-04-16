@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
-import { FaRegStar } from "react-icons/fa";
+
 import Link from "next/link";
+import FavoriteComp from "./FavoriteComp";
 
 const Card = ({
   id,
@@ -12,10 +14,10 @@ const Card = ({
     <div className="mx-auto max-w-45 my-2 bg-white rounded-2xl pb-3 shadow-sm">
       <div className="relative max-w-45">
         <div className="absolute top-0 right-0 bg-white/25 rounded-full p-1 m-2">
-          <FaRegStar
-            size={20}
-            color="white"
-          ></FaRegStar>
+          <FavoriteComp
+            id={id}
+            breed={breedGroup}
+          ></FavoriteComp>
         </div>
         <Link href={`/friend/${id}`}>
           <div className="">
