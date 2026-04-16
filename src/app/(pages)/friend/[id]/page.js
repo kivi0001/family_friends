@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FaRegStar } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import Description from "@/components/Description";
 import History from "@/components/History";

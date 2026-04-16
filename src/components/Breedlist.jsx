@@ -1,24 +1,32 @@
+import { Suspense } from "react";
 import Card from "./Card";
 
-const BreedList = () => {
+const BreedList = ({ searchParams }) => {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] justify-center">
-      <FetchBreed></FetchBreed>
-    </div>
+    <Suspense
+      fallback={<div>Loading details...</div>}
+    >
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] justify-center">
+        <FetchBreed
+          searchParams={searchParams}
+        ></FetchBreed>
+      </div>
+    </Suspense>
   );
 };
 
-const FetchBreed = async () => {
+const FetchBreed = async ({ searchParams }) => {
   "use server";
+  const { query } = await searchParams;
+  const url = query
+    ? `https://api.thedogapi.com/v1/breeds/search?q=${query}`
+    : "https://api.thedogapi.com/v1/breeds";
   try {
-    const response = await fetch(
-      "https://api.thedogapi.com/v1/breeds",
-      {
-        headers: {
-          "x-api-key": process.env.API_KEY,
-        },
+    const response = await fetch(url, {
+      headers: {
+        "x-api-key": process.env.API_KEY,
       },
-    );
+    });
 
     const breeds = await response.json();
 
@@ -26,7 +34,7 @@ const FetchBreed = async () => {
       <div key={breed.id}>
         <Card
           id={breed.id}
-          breedGroup={breed.breed_group}
+          breedName={breed.name}
           origin={breed.origin}
           imgsrc={breed.image.url}
           temperament={breed.temperament}

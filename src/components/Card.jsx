@@ -6,7 +6,7 @@ import FavoriteComp from "./FavoriteComp";
 
 const Card = ({
   id,
-  breedGroup,
+  breedName,
   origin,
   imgsrc,
 }) => {
@@ -16,7 +16,7 @@ const Card = ({
         <div className="absolute top-0 right-0 bg-white/25 rounded-full p-1 m-2">
           <FavoriteComp
             id={id}
-            breed={breedGroup}
+            breed={breedName}
           ></FavoriteComp>
         </div>
         <Link href={`/friend/${id}`}>
@@ -32,7 +32,7 @@ const Card = ({
         </Link>
       </div>
       <h2 className="mx-3 mt-1 font-bold text-base">
-        {breedGroup}
+        {breedName}
       </h2>
       <h3 className="mx-3 text-gray-400 text-xs">
         {origin}
