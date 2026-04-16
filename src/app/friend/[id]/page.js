@@ -41,6 +41,7 @@ const Detail = async ({ params }) => {
 
             <div className="flex gap-4 rounded-2xl absolute bottom-10 left-4 px-3 py-2 bg-white/35">
               <Image
+                loading="eager"
                 src={breed.image.url}
                 alt="picture of dog"
                 width={40}
@@ -53,6 +54,7 @@ const Detail = async ({ params }) => {
             </div>
 
             <Image
+              loading="eager"
               src={breed.image.url}
               alt="thumbnail picture of dog"
               width={340}

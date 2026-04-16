@@ -22,6 +22,7 @@ const Card = ({
         <Link href={`/friend/${id}`}>
           <div className="">
             <Image
+              loading="eager"
               src={imgsrc}
               alt="image of dog"
               width={300}
