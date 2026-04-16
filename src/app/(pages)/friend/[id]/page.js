@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Description from "@/components/Description";
 import History from "@/components/History";
 import Link from "next/link";
+import Characteristics from "@/components/Characteristics";
 
 const Detail = async ({ params }) => {
   const { id } = await params;
@@ -62,10 +63,10 @@ const Detail = async ({ params }) => {
           <h2 className="text-[28px] font-bold">
             {breed.name}
           </h2>
-          <div className="bg-[#ACD7FF] max-w-fit p-1 rounded-full">
-            <h3 className="m-2 text-[#6B8B42] text-[13px]">
-              {breed.temperament}
-            </h3>
+          <div className="temper-div">
+            <Characteristics
+              tempStr={breed.temperament}
+            ></Characteristics>
           </div>
           <Description
             description={breed.description}

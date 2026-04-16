@@ -29,6 +29,7 @@ const FetchBreed = async () => {
           breedGroup={breed.breed_group}
           origin={breed.origin}
           imgsrc={breed.image.url}
+          temperament={breed.temperament}
         ></Card>
       </div>
     ));
