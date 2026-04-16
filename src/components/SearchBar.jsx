@@ -15,7 +15,7 @@ const SearchBar = () => {
           ></IoSearch>
         </button>
         <input
-          className="min-w-85 border rounded-full border-[#CACACD] px-4"
+          className="min-w-75 border rounded-full border-[#CACACD] px-4"
           type="search"
           name="query"
           placeholder="search breeds"

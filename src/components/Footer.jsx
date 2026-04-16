@@ -5,7 +5,7 @@ import { FiUser } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 left-0 w-full backdrop-blur-xl pb-6 p-2">
+    <footer className="fixed bottom-0 w-full backdrop-blur-xl pb-6 p-2 max-w-100 mx-auto">
       <section className="flex justify-evenly sticky bottom-0">
         <FiHome size={30} color="grey"></FiHome>
         <FaRegStar
