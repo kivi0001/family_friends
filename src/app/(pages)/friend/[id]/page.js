@@ -7,7 +7,6 @@ import Characteristics from "@/components/Characteristics";
 import FavoriteComp from "@/components/FavoriteComp";
 
 const Detail = async ({ params }) => {
-  "use cache";
   const { id } = await params;
 
   const response = await fetch(
@@ -16,6 +15,7 @@ const Detail = async ({ params }) => {
       headers: {
         "x-api-key": process.env.API_KEY,
       },
+      cache: "no-store",
     },
   );
 
