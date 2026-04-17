@@ -47,7 +47,7 @@ const FetchBreed = async ({ searchParams }) => {
     ));
   } catch (error) {
     return (
-      <p>
+      <p className="flex justify-center">
         Oooops... Der skete en fejl under
         indlæsningen!
       </p>
